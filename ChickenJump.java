@@ -1,4 +1,4 @@
-111111class Player{
+ggclass Player{
     private double balance;
     Player(int bal){
         this.balance=bal;
