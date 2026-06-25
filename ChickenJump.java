@@ -1,4 +1,4 @@
-class Player{
+111111class Player{
     private double balance;
     Player(int bal){
         this.balance=bal;
