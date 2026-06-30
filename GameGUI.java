@@ -20,13 +20,13 @@ public class GameGUI extends JFrame {
         betButton = new JButton("Place Bet");
         startButton = new JButton("Start Game");
 
-        betButton.addActionListener(new ActionListener() { // Anonymous inner class
+        betButton.addActionListener(new ActionListener() { 
             @Override
             public void actionPerformed(ActionEvent e) {
                 betButton.setText("Bet Successful");
             }
         });
-        startButton.addActionListener(new ActionListener() { // Anonymous inner class
+        startButton.addActionListener(new ActionListener() { 
             @Override
             public void actionPerformed(ActionEvent e) {
                 startButton.setText("Starting......");
