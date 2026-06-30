@@ -1,5 +1,5 @@
-public class InsufficientBalanceException extends Exception {
-    public InsufficientBalanceException(String message) {
+public class InsufficientbalanceException extends Exception {
+    public InsufficientbalanceException(String message) {
         super(message);
     }
 }

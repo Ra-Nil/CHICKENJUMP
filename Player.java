@@ -14,12 +14,12 @@ public class Player {
     public void setBalance(double balance) {
         this.balance = balance;
     }
-   public void placeBet(double betAmount) throws InvalidBetexception,InsufficientBalanceException {
+   public void placeBet(double betAmount) throws Invalidbetexception,InsufficientbalanceException {
     if (betAmount <= 0) {
-        throw new InvalidBetexception("Bet amount must be greater than 0.");
+        throw new Invalidbetexception("Bet amount must be greater than 0.");
     }
     if (betAmount > balance) {
-        throw new InvalidBetexception("Insufficient balance.");
+        throw new Invalidbetexception("Insufficient balance.");
     }
     currentBet = betAmount;
     balance -= betAmount;

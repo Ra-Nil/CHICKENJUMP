@@ -1,5 +1,5 @@
-public class InvalidBetexception extends Exception {
-    public InvalidBetexception(String message) {
+public class Invalidbetexception extends Exception {
+    public Invalidbetexception(String message) {
         super(message);
     }
 }

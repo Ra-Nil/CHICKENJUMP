@@ -11,9 +11,9 @@ public class Main {
             try {
                 player.placeBet(betAmount);
                 break;
-            } catch (InvalidBetexception e) {
+            } catch (Invalidbetexception e) {
                 System.out.println(e.getMessage());
-            } catch (InsufficientBalanceException e) {
+            } catch (InsufficientbalanceException e) {
                 System.out.println(e.getMessage());
             }
         }
