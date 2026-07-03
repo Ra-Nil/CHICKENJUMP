@@ -19,6 +19,8 @@ public class Main {
                 System.out.println(e.getMessage());
             }
         }
+
+        
         game.startGame();
         game.jump();
         game.jump();
