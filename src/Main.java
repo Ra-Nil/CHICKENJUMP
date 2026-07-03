@@ -6,6 +6,7 @@ public class Main {
         Player player = new Player(1000);
         Chicken chicken = new Chicken(100, 300, 50, 50);
         Game game = new Game(player, chicken);
+        
         while (true) {
             System.out.print("Enter bet amount: ");
             double betAmount = sc.nextDouble();
