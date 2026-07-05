@@ -22,7 +22,7 @@ public class GameGUI extends JFrame {
         startButton = new JButton("Start Game");
 
 
-
+//balance check garxa player.java bata
       betButton.addActionListener(e -> {
     try {
         double bet = Double.parseDouble(betField.getText());
@@ -32,7 +32,7 @@ public class GameGUI extends JFrame {
         );
         balanceLabel.setText("Available Balance: $" + player.getBalance());
 
-        //exception dinxa
+        //exception dinxa message popup huncha
     } catch (Invalidbetexception | InsufficientbalanceException ex) {
         JOptionPane.showMessageDialog(this,ex.getMessage(), "Error",
                 JOptionPane.ERROR_MESSAGE
