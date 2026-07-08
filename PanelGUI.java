@@ -75,13 +75,7 @@ public class PanelGUI extends JPanel {
             // Show fire only on the path the player hit
             if (game.isGameOver() && i == game.getFirePathIndex()) {
 
-                g.drawImage(
-                        fireImg,
-                        x + 20,
-                        startY - 40,
-                        40,
-                        40,
-                        this
+                g.drawImage(fireImg,x + 20,startY - 40,70,70,this
                 );
             }
         }
