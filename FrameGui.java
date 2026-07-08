@@ -16,41 +16,28 @@ public class FrameGUI extends JFrame {
 
         this.game = game;
 
-        // Frame settings
         setTitle("Chicken Jump");
         setSize(900, 600);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // ==========================
-        // Labels
-        // ==========================
-        balanceLabel = new JLabel("Balance: $" + game.getPlayer().getBalance());
-        betLabel = new JLabel("Bet: $" + game.getPlayer().getCurrentBet());
+        balanceLabel = new JLabel("Balance: " + game.getPlayer().getBalance());
+        betLabel = new JLabel("Bet: " + game.getPlayer().getCurrentBet());
         multiplierLabel = new JLabel("Multiplier: x1.00");
 
-        // ==========================
-        // Cash Out Button
-        // ==========================
         cashOutButton = new JButton("Cash Out");
         cashOutButton.setFocusable(false); // Prevent Space bar from clicking button
 
         cashOutButton.addActionListener(e -> {
-
-            // Cash out winnings
             game.cashOut();
 
-            // Close game window
+            // close gardinxa entire program window
             dispose();
 
-            // Return to betting screen
+            //feri pahila firsst ko screen display garxa 
             new BetGUI(game.getPlayer());
 
         });
-
-        // ==========================
-        // Bottom Information Panel
-        // ==========================
         JPanel bottom = new JPanel();
 
         bottom.add(balanceLabel);
@@ -58,9 +45,6 @@ public class FrameGUI extends JFrame {
         bottom.add(multiplierLabel);
         bottom.add(cashOutButton);
 
-        // ==========================
-        // Game Drawing Panel
-        // ==========================
         panel = new PanelGUI(game, this);
 
         setLayout(new BorderLayout());
@@ -74,16 +58,11 @@ public class FrameGUI extends JFrame {
         SwingUtilities.invokeLater(() -> panel.requestFocusInWindow());
     }
 
-    // ==========================
-    // Update Balance Label
-    // ==========================
+
     public void updateBalance() {
         balanceLabel.setText("Balance: $" + game.getPlayer().getBalance());
     }
 
-    // ==========================
-    // Update Multiplier Label
-    // ==========================
     public void updateMultiplier() {
 
         if (game.getCurrentPath() == 0) {
@@ -91,10 +70,7 @@ public class FrameGUI extends JFrame {
             return;
         }
 
-        double multiplier =
-                game.getPaths()
-                    .get(game.getCurrentPath() - 1)
-                    .getMultiplier();
+        double multiplier =game.getPaths() .get(game.getCurrentPath() - 1) .getMultiplier();
 
         multiplierLabel.setText("Multiplier: x" + multiplier);
     }

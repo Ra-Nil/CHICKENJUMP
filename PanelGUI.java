@@ -17,47 +17,33 @@ public class PanelGUI extends JPanel {
 
         this.game = game;
         this.frame = frame;
-
-        // Load images
         chickenImg = new ImageIcon("assets/chicken.png").getImage();
         fireImg = new ImageIcon("assets/fire.png").getImage();
 
         // Background color
         setBackground(new Color(135, 206, 235));
 
-        // Receive keyboard input
+        // keyboard inout ko lagi
         setFocusable(true);
 
-        // ==========================
-        // Space Bar = Jump
-        // ==========================
         addKeyListener(new KeyAdapter() {
 
             @Override
             public void keyPressed(KeyEvent e) {
 
-                if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+                if (e.getKeyCode() == KeyEvent.VK_SPACE) { // spacebar====jump ko lagi
 
-                    // Chicken jumps
                     game.jump();
-
-                    // Update game information
                     frame.updateMultiplier();
                     frame.updateBalance();
-
-                    // Redraw game
-                    repaint();
-
-                    // Game Over
+                    repaint(); // game sakesi feri suru garna lai
                     if (game.isGameOver()) {
 
-                        JOptionPane.showMessageDialog( PanelGUI.this,"🔥 Game Over!"
+                        JOptionPane.showMessageDialog( PanelGUI.this,"Game Over!"
                         );
 
                         // Close game window
                         SwingUtilities.getWindowAncestor(PanelGUI.this).dispose();
-
-                        // Return to betting screen
                        new BetGUI(game.getPlayer());
                     }
                 }
@@ -76,9 +62,6 @@ public class PanelGUI extends JPanel {
         int pathHeight = 20;
         int gap = 25;
 
-        // ==========================
-        // Draw Paths
-        // ==========================
         for (int i = 0; i < game.getPaths().size(); i++) {
 
             Path path = game.getPaths().get(i);
@@ -103,16 +86,8 @@ public class PanelGUI extends JPanel {
             }
         }
 
-        // ==========================
-        // Draw Chicken
-        // ==========================
         g.drawImage(
-                chickenImg,
-                (int) game.getChicken().getX(),
-                (int) game.getChicken().getY(),
-                50,
-                50,
-                this
+                chickenImg,(int) game.getChicken().getX(),(int) game.getChicken().getY(), 50,50,this
         );
     }
 }

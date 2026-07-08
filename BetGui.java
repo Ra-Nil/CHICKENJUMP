@@ -41,6 +41,9 @@ public class BetGUI extends JFrame {
         setVisible(true);
     }
 
+
+    //bet ko exception handle ganr ako lagi
+
     private void placeBet() {
 
         try {

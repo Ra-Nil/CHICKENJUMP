@@ -7,7 +7,7 @@ public class Game {
 
     private Player player;
     private Chicken chicken;
-    private ArrayList<Path> paths;
+    private ArrayList<Path> paths;  //multiple paths ko lagi arraylist banako
 
     private int currentPath;
     private boolean gameOver;
@@ -27,13 +27,13 @@ public class Game {
 
         paths.clear();
 
-        for (int i = 1; i <= 15; i++) {
+        for (int i = 1; i <= 15; i++) {   //15 wata path
             paths.add(new Path(i));
         }
 
         currentPath = 0;
         gameOver = false;
-        firePathIndex = -1;
+        firePathIndex = -1;// path jump garepaxi decrease huncha i.e first path gayo vaney 14 path baki huncha and so on
     }
 
     public void jump() {
@@ -71,7 +71,6 @@ public class Game {
             return;
 
         if (currentPath == 0) {
-
             JOptionPane.showMessageDialog(null,
                     "Jump at least one path");
             return;
@@ -83,8 +82,7 @@ public class Game {
 
         player.setBalance(player.getBalance() + won);
 
-        JOptionPane.showMessageDialog(null,
-                "You Cashed Out!\nWon: $" + won);
+        JOptionPane.showMessageDialog(null, "YouWon: " + won);
 
         startGame();
 

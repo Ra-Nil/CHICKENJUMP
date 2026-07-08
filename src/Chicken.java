@@ -10,13 +10,9 @@ public class Chicken {
         this.isJumping = false;
     }
     public void jump() {
-        if (!isJumping) {
-            isJumping = true;
+        if ( isJumping == true) {
             System.out.println("Jumped");
         }
-    }
-    public void land() {
-        isJumping = false;
     }
     public void move(double distance) {
         this.x += distance;

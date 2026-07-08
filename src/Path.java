@@ -4,11 +4,11 @@ public class Path {
     private int pathNum;
     private double multiplier;
     private boolean fire;
-    private static Random random = new Random();
+    private static Random random = new Random();   //random fire generate garxa path hauruma
     public Path(int pathNum) {
         this.pathNum = pathNum;
         this.multiplier = 1.0 + (pathNum * 1.25);
-        this.fire = random.nextBoolean();
+        this.fire = random.nextBoolean();        //fire xa ki xaina random generate garxa
     }
     public int getPathNum() {
         return pathNum;
@@ -29,9 +29,5 @@ public class Path {
         if (fire==true) {
             System.out.println("GameOver");
         }
-    }
-    public static void main(String[] args) {
-        Path p = new Path(15);
-        p.displayPath();
     }
 }
