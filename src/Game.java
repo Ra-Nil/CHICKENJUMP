@@ -1,5 +1,6 @@
 package src;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 public class Game {
     private Player player;
     private Chicken chicken;
@@ -24,27 +25,36 @@ public class Game {
         System.out.println("Game Started!");
     }
     public void jump() {
-        if (gameOver) {
-            return;
-        }
-        else
-        chicken.jump();   //path agadi badhxaa jump garda
-        currentPath++;
-        if (currentPath <= paths.size()-1) {    //15-1== trueeeee 14 samma janxa
-            Path current = paths.get(currentPath);  
-            currentPath++;
-            if (current.hasFire()) {
-                System.out.println("Game Over!");
-                gameOver = true;
-            } else {
-     currentPath++;
-            }
-        }
-        if (currentPath == paths.size() && !gameOver) {
-            Path current = paths.get(currentPath - 1);
-            System.out.println("Congratulations! You won! \nAmount won:" + (player.getBalance() * current.getMultiplier()));
-        }
-    }
+    if(gameOver)
+        return;
+    currentPath++;
+    chicken.move(105);
+if (currentPath >= paths.size()) {
+
+    JOptionPane.showMessageDialog(null, " You Win!"+player.getBalance());
+    startGame();
+    chicken.setX(50);
+    chicken.setY(395);
+    currentPath = 0;
+    gameOver = false;
+
+    return;
+}
+
+    Path current = paths.get(currentPath);
+
+    if (current.hasFire()) {
+
+    JOptionPane.showMessageDialog(null, "Game Over!");
+
+    startGame();
+    chicken.setX(50);
+    chicken.setY(395);
+    currentPath = 0;
+    gameOver = false;
+    return;
+}
+}
     public void cashOut() {
         if (gameOver) {
             return;

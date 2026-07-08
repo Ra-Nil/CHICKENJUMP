@@ -1,11 +1,9 @@
 import javax.swing.*;
 import src.Game;
-class GameFrame extends JFrame {
-
+class FrameGUI extends JFrame {
     private Game game;
 
-    public GameFrame(Game game) {
-
+    public FrameGUI(Game game) {
         this.game = game;
 
         setTitle("Chicken Jump");
@@ -16,7 +14,9 @@ class GameFrame extends JFrame {
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        add(new PanelGUI(game));
+        PanelGUI panel = new PanelGUI(game);
+        add(panel);
+        panel.requestFocusInWindow();
 
         setVisible(true);
 

@@ -3,6 +3,7 @@ import javax.swing.*;
 import src.Game;
 import src.Path;
 
+
 public class PanelGUI extends JPanel {
 
     private Game game;
@@ -13,12 +14,27 @@ public class PanelGUI extends JPanel {
 
         this.game = game;
 
-        chickenImg = new ImageIcon("images/chicken.png").getImage();
-        fireImg = new ImageIcon("images/fire.png").getImage();
+        chickenImg = new ImageIcon("assets/chicken.png").getImage();
+        fireImg = new ImageIcon("assets/fire.png").getImage();
 
         setBackground(new Color(135,206,235)); // Sky blue
-    }
 
+        setFocusable(true);
+
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            @Override
+            public void keyPressed(java.awt.event.KeyEvent e) {
+
+                if (e.getKeyCode() == java.awt.event.KeyEvent.VK_SPACE) {
+
+                    game.jump();
+                    repaint();
+
+                }
+
+            }
+        });
+    }
     @Override
     protected void paintComponent(Graphics g) {
 

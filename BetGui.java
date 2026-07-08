@@ -62,10 +62,10 @@ public class BetGUI extends JFrame {
     private void startGame(){
 
         dispose();     //recent  frame program gui off gardinxa//
-        Chicken chicken = new Chicken(0,0,50,50);
+        Chicken chicken = new Chicken(50,395,50,50);
         Game game = new Game(player,chicken);
 
-        new GameFrame(game); /// naya gameframe  dinxa
+        new FrameGUI(game); /// naya gameframe  dinxa
 
     }
 
