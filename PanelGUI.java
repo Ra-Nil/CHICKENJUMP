@@ -58,7 +58,7 @@ public class PanelGUI extends JPanel {
                         SwingUtilities.getWindowAncestor(PanelGUI.this).dispose();
 
                         // Return to betting screen
-                        new BetGUI();
+                       new BetGUI(game.getPlayer());
                     }
                 }
             }

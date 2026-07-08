@@ -1,9 +1,11 @@
+import javax.swing.SwingUtilities;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        javax.swing.SwingUtilities.invokeLater(() -> {
-            new BetGUI();
+        SwingUtilities.invokeLater(() -> {
+            new BetGUI(new src.Player(1000));
         });
 
     }

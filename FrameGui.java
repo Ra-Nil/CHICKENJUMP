@@ -44,7 +44,7 @@ public class FrameGUI extends JFrame {
             dispose();
 
             // Return to betting screen
-            new BetGUI();
+            new BetGUI(game.getPlayer());
 
         });
 
